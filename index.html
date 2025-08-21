@@ -12,9 +12,8 @@
         font-size: 24px;
       }
       div {
-        background-color: rgb(75, 75, 75);
-        min-height: 100px;
-        margin-bottom: 50px;
+        margin: 0;
+        padding: 0;
       }
 
       .navbar {
@@ -29,6 +28,7 @@
         width: 80px;
         position: absolute;
         left: 50px;
+        pointer-events: none;
       }
 
       input {
@@ -40,6 +40,7 @@
         padding-left: 100px;
         color: white;
         font-size: 24px;
+        text-align: center;
       }
 
       .input-container {
@@ -49,6 +50,9 @@
         align-items: center;
         padding-left: 32px;
         padding-right: 32px;
+        margin-bottom: 100px;
+        min-height: 100px;
+        position: relative;
       }
 
       .currency {
@@ -56,15 +60,29 @@
         right: 100px;
         font-size: 25px;
         color: white;
+        pointer-events: none;
       }
-      .arrow-container {
+      .center-container {
         display: flex;
         align-items: center;
         justify-content: center;
+        margin-bottom: 50px;
+        min-height: 60px;
       }
       button {
         background-color: grey;
         padding: 0 32px;
+        height: 50px;
+        border: unset;
+        font-size: 24px;
+        border-radius: 10px;
+      }
+      button:hover {
+        background-color: darkgrey;
+      }
+      button:active {
+        transform: translateY(4px);
+        box-shadow: 0 1px #b30000;
       }
     </style>
 
@@ -80,22 +98,19 @@
 
     <div class="input-container">
       <img class="flag" src="/Bilder/eu_flag.png" />
-      <input type="text" />
+      <input id="currency1" type="text" />
       <span class="currency">EUR</span>
-    </div>
-
-    <div class="arrow-container">
-
     </div>
 
     <div class="input-container">
       <img class="flag" src="/Bilder/usa_flag.jpg" />
-      <input type="text" />
+      <input id="currency2" type="text" />
       <span class="currency"> USD</span>
     </div>
 
-    <div>
-      <button>Berechnen</button>
+    <div class="center-container">
+      <button onclick="calculate()">Berechnen</button>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>
